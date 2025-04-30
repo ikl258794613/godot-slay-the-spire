@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d3o6paoveqeml"]
+[gd_scene load_steps=13 format=3 uid="uid://d3o6paoveqeml"]
 
 [ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://art/background.png" id="1_6smsm"]
 [ext_resource type="PackedScene" uid="uid://digfcn7wb6i1" path="res://enemy/enemy.tscn" id="2_7x3jd"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dbs84gfe6pw5c" path="res://scences/card_ui/card_ui.tscn" id="2_s3ulf"]
 [ext_resource type="PackedScene" uid="uid://buvosimqct2ga" path="res://scences/player/player.tscn" id="3_7x3jd"]
 [ext_resource type="PackedScene" uid="uid://de32kkpfg2p8e" path="res://scences/card_target_selector/card_target_selector.tscn" id="3_bcfky"]
+[ext_resource type="Resource" uid="uid://dtyyaqsfbgxoq" path="res://enemies/crab/test_enemy.tres" id="3_bov5p"]
 [ext_resource type="Resource" uid="uid://ha5ringwpg17" path="res://characters/warrior/cards/warrior_axe_attack.tres" id="4_agx3x"]
 [ext_resource type="Resource" uid="uid://f6owt31l5p3t" path="res://characters/warrior/warrior.tres" id="4_nl2s1"]
 [ext_resource type="Resource" uid="uid://de0knh1opnmyr" path="res://characters/warrior/cards/warrior_block.tres" id="5_d4pnn"]
@@ -33,6 +34,7 @@ debug_color = Color(0, 0.6, 0.701961, 0.192157)
 
 [node name="Enemy" parent="." instance=ExtResource("2_7x3jd")]
 position = Vector2(217, 79)
+stats = ExtResource("3_bov5p")
 
 [node name="Player" parent="." instance=ExtResource("3_7x3jd")]
 position = Vector2(37, 76)
@@ -59,14 +61,17 @@ script = ExtResource("2_d7sw2")
 [node name="CardUI" parent="BattleUI/Hand" instance=ExtResource("2_s3ulf")]
 layout_mode = 2
 card = ExtResource("4_agx3x")
+char_stats = ExtResource("4_nl2s1")
 
 [node name="CardUI2" parent="BattleUI/Hand" instance=ExtResource("2_s3ulf")]
 layout_mode = 2
 card = ExtResource("4_agx3x")
+char_stats = ExtResource("4_nl2s1")
 
 [node name="CardUI3" parent="BattleUI/Hand" instance=ExtResource("2_s3ulf")]
 layout_mode = 2
 card = ExtResource("5_d4pnn")
+char_stats = ExtResource("4_nl2s1")
 
 [node name="ManaUI" parent="BattleUI" instance=ExtResource("10_nl2s1")]
 char_stats = ExtResource("4_nl2s1")
